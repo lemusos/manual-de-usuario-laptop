@@ -934,7 +934,7 @@ body {
 
 .hero {
 
-    min-height: 560px;
+    min-height: 580px;
 
     max-width: 1200px;
 
@@ -1050,7 +1050,7 @@ body {
 
 .hero-image {
 
-    width: 450px;
+    width: 490px;
 
     animation: laptopFloat 5s ease-in-out infinite;
 }
@@ -1105,7 +1105,7 @@ body {
 
 .content-container {
 
-    max-width: 1150px;
+    max-width: 11500px;
 
     margin: auto;
 }
@@ -1172,11 +1172,11 @@ body {
 
     border: 1px solid var(--border);
 
-    border-radius: 14px;
+    border-radius: 48px;
 
     transition:
-        transform .35s ease,
-        border-color .35s ease,
+        transform .48s ease,
+        border-color .39s ease,
         box-shadow .35s ease;
 }
 
