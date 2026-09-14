@@ -42,20 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const latitudeBtn = document.getElementById('latitude-btn');
-    const latitudeDropdown = document.getElementById('latitude-dropdown');
-
-    if (latitudeBtn && latitudeDropdown) {
-        latitudeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            latitudeDropdown.classList.toggle('is-open');
-        });
-
-        // Cierra el menú automáticamente al tocar fuera de él
-        document.addEventListener('click', () => {
-            latitudeDropdown.classList.remove('is-open');
-        });
-    }
-});
+    
 });
