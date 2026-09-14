@@ -1,20 +1,31 @@
+// main.js
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Menú Hamburguesa Móvil
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.main-nav');
 
+    const toggleMenu = () => {
+        const isActive = mobileMenu.classList.toggle('is-active');
+        navMenu.classList.toggle('is-active');
+        mobileMenu.setAttribute('aria-expanded', isActive);
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove('is-active');
+        navMenu.classList.remove('is-active');
+        mobileMenu.setAttribute('aria-expanded', 'false');
+    };
+
     if (mobileMenu && navMenu) {
-        mobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.toggle('is-active');
-            navMenu.classList.toggle('is-active');
-        });
+        mobileMenu.addEventListener('click', toggleMenu);
 
         const navLinks = document.querySelectorAll('.main-nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('is-active');
-                navMenu.classList.remove('is-active');
-            });
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('is-active')) {
+                closeMenu();
+            }
         });
     }
 
